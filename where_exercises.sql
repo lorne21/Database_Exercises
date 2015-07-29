@@ -1,3 +1,3 @@
-SELECT first_name
+SELECT last_name
 FROM employees
-WHERE birth_date LIKE '%-12-25'; 
+WHERE last_name LIKE '%q%'; 
