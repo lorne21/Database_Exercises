@@ -1,3 +1,3 @@
 SELECT first_name
 FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya');
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'; 
