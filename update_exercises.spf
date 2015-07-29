@@ -59,21 +59,22 @@
 			<integer>1</integer>
 			<key>contentSelection</key>
 			<data>
-			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
-			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
-			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
-			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
-			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
-			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
-			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
-			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClZlbXBfbm/SHh8tLl8Q
-			D05TTXV0YWJsZVN0cmluZ6MtLyNYTlNTdHJpbmfSHh8xMl5OU011
-			dGFibGVBcnJheaMxMyNXTlNBcnJhedIeHyI1oiIjXxAPTlNLZXll
-			ZEFyY2hpdmVy0Tg5VGRhdGGAAQAIABEAGgAjAC0AMgA3AEUASwBS
-			AFoAZQBsAHAAcgB0AHYAegB8AH4AgACCAIcAjACRALoAwQDCAMMA
-			xQDKANUA3gD0APgBBQEOARMBFQEXARkBHgEoASoBMQE2AUgBTAFV
-			AVoBaQFtAXUBegF9AY8BkgGXAAAAAAAAAgEAAAAAAAAAOgAAAAAA
-			AAAAAAAAAAAAAZk=
+			YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK8QDwcIFRYXGBkdJCouMjU4PFUkbnVs
+			bNMJCgsMEBRXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6MNDg+A
+			AoADgASjERITgAWABoAIgA5UdHlwZVRyb3dzVGtleXNfECZTZWxl
+			Y3Rpb25EZXRhaWxUeXBlUHJpbWFyeUtleWVkRGV0YWlsc9MJCgsa
+			GxygoIAH0h4fICFaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0
+			YWJsZURpY3Rpb25hcnmjICIjXE5TRGljdGlvbmFyeVhOU09iamVj
+			dNIKCyUpoyYnKIAJgAuADIAN0gsrLC1ZTlMuc3RyaW5ngApWZW1w
+			X25v0h4fLzBfEA9OU011dGFibGVTdHJpbmejLzEjWE5TU3RyaW5n
+			0gsrLDSAClV0aXRsZdILKyw3gApZZnJvbV9kYXRl0h4fOTpeTlNN
+			dXRhYmxlQXJyYXmjOTsjV05TQXJyYXnSHh8iPaIiI18QD05TS2V5
+			ZWRBcmNoaXZlctFAQVRkYXRhgAEACAARABoAIwAtADIANwBJAE8A
+			VgBeAGkAcAB0AHYAeAB6AH4AgACCAIQAhgCLAJAAlQC+AMUAxgDH
+			AMkAzgDZAOIA+AD8AQkBEgEXARsBHQEfASEBIwEoATIBNAE7AUAB
+			UgFWAV8BZAFmAWwBcQFzAX0BggGRAZUBnQGiAaUBtwG6Ab8AAAAA
+			AAACAQAAAAAAAABCAAAAAAAAAAAAAAAAAAABwQ==
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
@@ -82,11 +83,12 @@
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
-			<string>SELECT first_name
+			<string>SELECT DISTINCT first_name, last_name
 FROM employees
-WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'; </string>
+WHERE last_name LIKE 'E%'
+AND last_name LIKE '%e';</string>
 			<key>table</key>
-			<string>employees</string>
+			<string>titles</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
@@ -101,27 +103,110 @@ WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'; </string>
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT first_name, last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+AND last_name LIKE '%e'</string>
+		<string>SELECT first_name, last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+AND last_name LIKE '%e'
+GROUP BY first_name</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+AND last_name LIKE '%e'
+GROUP BY last_name</string>
+		<string>SELECT DISTINCT title
+from titles
+GROUP BY title</string>
+		<string>SELECT DISTINCT title
+from title
+GROUP BY title</string>
+		<string>SELECT first_name, last_name 
+FROM employees
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+AND birth_date LIKE '%-12-25'
+ORDER BY hire_date DESC, birth_date DESC</string>
+		<string>SELECT first_name, last_name 
+FROM employees
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+AND birth_date LIKE '%-12-25'
+ORDER BY birth_date DESC, hire_date DESC</string>
+		<string>SELECT first_name 
+FROM employees
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+AND birth_date LIKE '%-12-25'
+ORDER BY birth_date DESC, hire_date DESC</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%e'
+ORDER BY emp_no DESC</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%e'
+ORDER BY emp_no</string>
+		<string>SELECT first_name, last_name
+FROM employees
+WHERE first_name ='Irena'
+AND gender = 'M'
+OR first_name = 'Vidya'
+AND gender = 'M'
+OR first_name = 'Maya'
+AND gender = 'M'
+ORDER BY last_name, first_name</string>
+		<string>SELECT first_name, last_name
+FROM employees
+WHERE first_name ='Irena'
+AND gender = 'M'
+OR first_name = 'Vidya'
+AND gender = 'M'
+OR first_name = 'Maya'
+AND gender = 'M'
+ORDER BY first_name, last_name</string>
+		<string>SELECT first_name, last_name
+FROM employees
+WHERE first_name ='Irena'
+AND gender = 'M'
+OR first_name = 'Vidya'
+AND gender = 'M'
+OR first_name = 'Maya'
+AND gender = 'M'
+ORDER BY first_name</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE '%q%'
+AND last_name NOT LIKE '%qu%'</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE '%q%'
+AND last_name != last_name LIKE '%qu%'</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE '%q%'
+AND last_name IS NOT LIKE '%qu%'</string>
+		<string>SELECT first_name 
+FROM employees
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+AND birth_date LIKE '%-12-25'</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+AND last_name LIKE '%e'</string>
+		<string>SELECT last_name
+FROM employees
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%e'</string>
 		<string>SELECT first_name
 FROM employees
-WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'</string>
-		<string>SELECT DISTINCT first_name
-FROM employees
-WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'</string>
-		<string>SELECT DISTINCT first_name
-FROM employees
-WHERE hire_date BETWEEN 1990-01-01 AND 1999-12-31</string>
-		<string>SELECT DISTINCT last_name
-FROM employees
-WHERE last_name LIKE 'E%'</string>
-		<string>SELECT DISTINCT first_name
-FROM employees
-WHERE first_name LIKE 'E%'</string>
-		<string>SELECT first_name
-FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya')</string>
-		<string>SELECT * FROM albums</string>
-		<string>SELECT * FROM departments</string>
-		<string>SHOW * FROM departments</string>
+WHERE first_name ='Irena'
+AND gender = 'M'
+OR first_name = 'Vidya'
+AND gender = 'M'
+OR first_name = 'Maya'
+AND gender = 'M'</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
